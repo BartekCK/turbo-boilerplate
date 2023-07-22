@@ -1,0 +1,17 @@
+{
+   "extends": "@packages/tsconfig/tsconfig.json",
+   "compilerOptions": {
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
+   },
+   "include": ["src/**/*"],
+   "exclude": ["node_modules", "dist", "coverage"],
+   "references": [
+      {
+         "path": "../express-api/tsconfig.json"
+      }
+   ]
+}
