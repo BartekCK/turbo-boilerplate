@@ -13,8 +13,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "dotenv-cli": "^7.2.1",
-    "turbo": "^1.10.9"
+    "dotenv-cli": "^7.4.2",
+    "turbo": "latest"
   },
   "workspaces": [
     "apps/*",
