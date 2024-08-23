@@ -2,11 +2,21 @@
   "name": "turbo-boilerplate",
   "version": "1.0.0",
   "description": "",
+  "packageManager": "npm@10.8.1",
   "scripts": {
-    "start:dev": "turbo run start:dev",
+    "cache:clean": "turbo run cache:clean && rimraf .turbo",
+    "install:clean": "turbo run install:clean && rimraf node_modules",
+
+    "start:dev:watch": "turbo watch start:dev:watch",
+    "start:dev:watch:nest": "npm run start:dev:watch -- --filter=@apps/nest-api",
+    "start:dev:watch:express": "npm run start:dev:watch -- --filter=@apps/express-api",
+
     "lint": "turbo run lint",
+
     "build": "turbo run build",
-    "build:watch": "turbo run build:watch",
+    "build:dev:watch": "turbo watch build:dev",
+    "build:clean": "turbo run build:clean",
+
     "test": "turbo run test",
     "update": "npm update"
   },
@@ -18,6 +28,7 @@
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "libs/*"
   ]
 }

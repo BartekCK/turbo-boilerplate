@@ -41,7 +41,7 @@ The `package.json` file at the root of the repository contains several useful sc
 - `"start:dev"`: Runs all applications in development mode.
 - `"lint"`: Lints all the applications and packages with ESLint.
 - `"build"`: Builds all the applications and packages.
-- `"build:watch"`: Watches all the applications and packages and rebuilds them if there are changes.
+- `"build:dev:watch"`: Watches all the applications and packages and rebuilds them if there are changes.
 - `"test"`: Runs tests for all applications and packages.
 - `"update"`: Updates all the dependencies of the repository.
 

@@ -8,10 +8,5 @@
       "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"
    },
    "include": ["src/**/*"],
-   "exclude": ["node_modules", "dist", "coverage"],
-   "references": [
-      {
-         "path": "../express-api/tsconfig.json"
-      }
-   ]
+   "exclude": ["node_modules", "dist", "coverage"]
 }

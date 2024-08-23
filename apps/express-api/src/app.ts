@@ -2,6 +2,8 @@ import express, { Response, Request } from "express";
 import { TextTransformer } from "./application/services/textTransformer";
 import { ITextTransformer } from "./application/services/textTransformer.interface";
 import { UppercasedTextDto } from "./shared/dto/uppercasedTextDto";
+import { UuidService } from "@libs/uuid";
+import { UuidDto } from "./shared";
 
 class App {
    public static main(): void {
@@ -10,6 +12,8 @@ class App {
       const port = process.env.APP_PORT;
 
       const textTransformer: ITextTransformer = new TextTransformer();
+
+      const uuid = new UuidService();
 
       if (!port) {
          throw new Error("App port should be provided");
@@ -25,6 +29,10 @@ class App {
          });
 
          res.send({ text: uppercasedText }).status(200);
+      });
+
+      app.get("/uuid", (req: Request, res: Response<UuidDto>) => {
+         res.send({ value: uuid.generateV4() }).status(200);
       });
 
       app.listen(port, () => {
