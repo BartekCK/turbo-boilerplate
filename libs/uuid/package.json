@@ -1,21 +1,21 @@
 {
-  "name": "@apps/express-api",
+  "name": "@libs/uuid",
   "version": "1.0.0",
   "description": "",
   "exports": {
-    ".": "./src/shared/index.ts"
+    ".": "./dist/index.js"
   },
-  "types": "./src/shared/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
     "cache:clean": "rimraf .turbo",
     "install:clean": "rimraf node_modules",
 
-    "start:dev:watch": "dotenv -e .env -- nodemon src/app.ts",
+    "start:dev": "dotenv -e .env -- nodemon src/app.ts",
 
     "build": "tsc --build tsconfig.build.json",
     "build:dev": "tsc --build tsconfig.json",
-    "build:clean": "rimraf dist",
     "build:dev:watch": "tsc --build tsconfig.json -w",
+    "build:clean": "rimraf dist",
 
     "lint": "eslint . --ext .ts --fix",
     "test": "jest --runInBand --config jest.config.ts"
@@ -24,11 +24,9 @@
   "license": "ISC",
   "prettier": "@packages/prettier-common",
   "dependencies": {
-    "express": "^4.19.2",
-    "@libs/uuid": "*"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
+
     "@packages/tsconfig": "*",
     "@packages/eslint-config-common": "*",
     "@packages/prettier-common": "*",

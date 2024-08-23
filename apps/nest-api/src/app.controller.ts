@@ -7,6 +7,8 @@ export class AppController {
 
    @Get()
    async getHello(@Query("text") text: string): Promise<string> {
-      return this.appService.getHello(text);
+      console.log("text", text);
+
+      return this.appService.getHello(text as string);
    }
 }

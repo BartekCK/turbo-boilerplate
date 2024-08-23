@@ -1,24 +1,40 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "start:dev": {
-      "persistent": true,
+  "tasks": {
+    "install:clean": {
       "cache": false
     },
-    "build:watch": {
-      "outputs": ["dist/**"],
+    "cache:clean": {
       "cache": false
+    },
+
+    "start:dev:watch": {
+      "persistent": true,
+      "cache": false,
+      "inputs": ["$TURBO_DEFAULT$", ".env"],
+      "dependsOn": ["^build:dev"]
+    },
+
+    "build:dev": {
+      "outputs": ["dist/**"],
+      "inputs": ["tsconfig.json", ".env", "src/**/*.ts"],
+      "dependsOn": ["^build:dev"],
+      "cache": true
     },
     "build": {
-      "dependsOn": ["test", "clean"],
       "outputs": ["dist/**"],
+      "dependsOn": ["^build"],
       "cache": false
     },
-    "clean": {
-      "cache": false
+    "build:clean": {
+      "cache": false,
+      "dependsOn": ["^build:clean"]
     },
+
     "lint": {
-      "cache": false
+      "cache": false,
+      "inputs": ["$TURBO_DEFAULT$", ".env"],
+      "env": ["*"]
     },
     "test": {
       "dependsOn": ["lint"],
