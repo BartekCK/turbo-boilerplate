@@ -18,6 +18,11 @@ Currently, we have two applications in the repository:
 - `@apps/express-api`: This is an Express.js application. It also includes a shared folder, which can be imported and used in other parts of your project.
 - `@apps/nest-api`: This is a Nest.js application, which also uses shared data transfer objects (DTOs) from the Express API application.
 
+## Libs
+
+The repository also includes a `libs` folder, which contains shared libraries that can be used across different parts of your project. The main difference between packages and libs is that libs have to be transpiled before they can be used, while packages can be used directly. Packages are typically used for configuration and shared settings, while libs are used for shared code.
+- `@libs/uuid`: This is a library that generates a random UUID v4.
+
 ## Key Features
 
 - **Monorepo setup:** The repository utilizes the monorepo setup, offering an organized structure for your applications and shared code. It helps to centralize the configuration and ensure consistency across multiple packages.
@@ -38,12 +43,22 @@ Currently, we have two applications in the repository:
 
 The `package.json` file at the root of the repository contains several useful scripts:
 
-- `"start:dev"`: Runs all applications in development mode.
-- `"lint"`: Lints all the applications and packages with ESLint.
-- `"build"`: Builds all the applications and packages.
-- `"build:dev:watch"`: Watches all the applications and packages and rebuilds them if there are changes.
-- `"test"`: Runs tests for all applications and packages.
-- `"update"`: Updates all the dependencies of the repository.
+`"cache:clean"`: Cleans the Turbo cache and removes the `.turbo` directory.
+`"install:clean"`: Cleans the node modules by removing the `node_modules` directory.
+
+`"start:dev:watch"`: Watches all applications in development mode and restarts them on changes.
+`"start:dev:watch:nest"`: Watches the Nest.js application in development mode and restarts it on changes.
+`"start:dev:watch:express"`: Watches the Express.js application in development mode and restarts it on changes.
+
+`"lint"`: Lints all the applications and packages with ESLint.
+
+`"build"`: Builds all the applications and packages.
+`"build:dev:watch"`: Watches all the applications and packages and rebuilds them if there are changes.
+`"build:clean"`: Cleans the build artifacts by removing the `dist` directory.
+
+`"test"`: Runs tests for all applications and packages.
+
+`"update"`: Updates all the dependencies of the repository.
 
 
 ## Repository
