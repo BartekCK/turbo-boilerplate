@@ -10,6 +10,7 @@
     "start:dev:watch": "turbo watch start:dev:watch",
     "start:dev:watch:nest": "npm run start:dev:watch -- --filter=@apps/nest-api",
     "start:dev:watch:express": "npm run start:dev:watch -- --filter=@apps/express-api",
+    "start:dev:watch:react": "npm run start:dev:watch -- --filter=@apps/csr-react-vite",
 
     "lint": "turbo run lint",
 
