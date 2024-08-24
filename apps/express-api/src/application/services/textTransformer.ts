@@ -1,4 +1,4 @@
-import { ITextTransformer } from "./textTransformer.interface";
+import { ITextTransformer } from "./textTransformer.interface.js";
 
 export class TextTransformer implements ITextTransformer {
    private readonly isTextValidRegex = new RegExp("^[a-zA-Z]*$");

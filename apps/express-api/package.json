@@ -1,5 +1,6 @@
 {
   "name": "@apps/express-api",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "exports": {
@@ -9,15 +10,13 @@
   "scripts": {
     "cache:clean": "rimraf .turbo",
     "install:clean": "rimraf node_modules",
-
-    "start:dev:watch": "dotenv -e .env -- nodemon src/app.ts",
-
+    "start:dev:watch": "node --env-file=.env --loader ts-node/esm --watch src/app.ts",
     "build": "tsc --build tsconfig.build.json",
     "build:dev": "tsc --build tsconfig.json",
     "build:clean": "rimraf dist",
     "build:dev:watch": "tsc --build tsconfig.json -w",
 
-    "lint": "eslint . --ext .ts --fix",
+    "lint": "eslint . --fix",
     "test": "jest --runInBand --config jest.config.ts"
   },
   "author": "",

@@ -1,6 +1,7 @@
 {
   "extends": "@packages/tsconfig/tsconfig.json",
   "compilerOptions": {
+    "module": "NodeNext",
     "outDir": "./dist",
     "rootDir": "./src",
     "tsBuildInfoFile": "./dist/tsconfig.build.tsbuildinfo"

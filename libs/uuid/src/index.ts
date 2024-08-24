@@ -1,1 +1,1 @@
-export * from "./uuidService";
+export * from "./uuidService.js";
