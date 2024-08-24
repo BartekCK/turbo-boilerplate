@@ -1,5 +1,5 @@
-import { TextTransformer } from "../textTransformer";
-import { ITextTransformer } from "../textTransformer.interface";
+import { TextTransformer } from "../textTransformer.js";
+import { ITextTransformer } from "../textTransformer.interface.js";
 
 describe("textTransformer.toUppercase", () => {
    const textTransformer: ITextTransformer = new TextTransformer();

@@ -1,2 +1,2 @@
-export * from "./dto/uppercasedTextDto";
-export * from "./dto/uuidDto";
+export * from "./dto/uppercasedTextDto.js";
+export * from "./dto/uuidDto.js";

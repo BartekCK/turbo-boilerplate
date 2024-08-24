@@ -1,5 +1,5 @@
 import { Controller, Get, Query } from "@nestjs/common";
-import { AppService } from "./app.service";
+import { AppService } from "./app.service.js";
 
 @Controller()
 export class AppController {
@@ -7,8 +7,6 @@ export class AppController {
 
    @Get()
    async getHello(@Query("text") text: string): Promise<string> {
-      console.log("text", text);
-
       return this.appService.getHello(text as string);
    }
 }

@@ -1,5 +1,6 @@
 {
   "name": "@libs/uuid",
+  "type": "module",
   "version": "1.0.0",
   "description": "",
   "exports": {
@@ -9,15 +10,11 @@
   "scripts": {
     "cache:clean": "rimraf .turbo",
     "install:clean": "rimraf node_modules",
-
-    "start:dev": "dotenv -e .env -- nodemon src/app.ts",
-
     "build": "tsc --build tsconfig.build.json",
     "build:dev": "tsc --build tsconfig.json",
     "build:dev:watch": "tsc --build tsconfig.json -w",
     "build:clean": "rimraf dist",
-
-    "lint": "eslint . --ext .ts --fix",
+    "lint": "eslint . --fix",
     "test": "jest --runInBand --config jest.config.ts"
   },
   "author": "",
@@ -26,7 +23,6 @@
   "dependencies": {
   },
   "devDependencies": {
-
     "@packages/tsconfig": "*",
     "@packages/eslint-config-common": "*",
     "@packages/prettier-common": "*",

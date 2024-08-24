@@ -1,9 +1,8 @@
 import express, { Response, Request } from "express";
-import { TextTransformer } from "./application/services/textTransformer";
-import { ITextTransformer } from "./application/services/textTransformer.interface";
-import { UppercasedTextDto } from "./shared/dto/uppercasedTextDto";
 import { UuidService } from "@libs/uuid";
-import { UuidDto } from "./shared";
+import { ITextTransformer } from "./application/services/textTransformer.interface.js";
+import { TextTransformer } from "./application/services/textTransformer.js";
+import { UppercasedTextDto, UuidDto } from "./shared/index.js";
 
 class App {
    public static main(): void {
