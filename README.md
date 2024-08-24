@@ -43,22 +43,22 @@ The repository also includes a `libs` folder, which contains shared libraries th
 
 The `package.json` file at the root of the repository contains several useful scripts:
 
-`"cache:clean"`: Cleans the Turbo cache and removes the `.turbo` directory.
-`"install:clean"`: Cleans the node modules by removing the `node_modules` directory.
+- `"cache:clean"`: Cleans the Turbo cache and removes the `.turbo` directory.
+- `"install:clean"`: Cleans the node modules by removing the `node_modules` directory.
 
-`"start:dev:watch"`: Watches all applications in development mode and restarts them on changes.
-`"start:dev:watch:nest"`: Watches the Nest.js application in development mode and restarts it on changes.
-`"start:dev:watch:express"`: Watches the Express.js application in development mode and restarts it on changes.
+- `"start:dev:watch"`: Watches all applications in development mode and restarts them on changes.
+- `"start:dev:watch:nest"`: Watches the Nest.js application in development mode and restarts it on changes.
+- `"start:dev:watch:express"`: Watches the Express.js application in development mode and restarts it on changes.
 
-`"lint"`: Lints all the applications and packages with ESLint.
+- `"lint"`: Lints all the applications and packages with ESLint.
 
-`"build"`: Builds all the applications and packages.
-`"build:dev:watch"`: Watches all the applications and packages and rebuilds them if there are changes.
-`"build:clean"`: Cleans the build artifacts by removing the `dist` directory.
+- `"build"`: Builds all the applications and packages.
+- `"build:dev:watch"`: Watches all the applications and packages and rebuilds them if there are changes.
+- `"build:clean"`: Cleans the build artifacts by removing the `dist` directory.
 
-`"test"`: Runs tests for all applications and packages.
+- `"test"`: Runs tests for all applications and packages.
 
-`"update"`: Updates all the dependencies of the repository.
+- `"update"`: Updates all the dependencies of the repository.
 
 
 ## Repository
