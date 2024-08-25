@@ -11,6 +11,11 @@ export default [
    {
       ignores: ["**/dist/", "**/.dist/", "**/build/", "**/.build/"],
    },
+   {
+      rules: {
+         "no-implicit-globals": "error",
+      },
+   },
    { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
    pluginJs.configs.recommended,
    ...tsEslint.configs.recommended,

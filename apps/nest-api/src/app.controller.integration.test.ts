@@ -1,6 +1,7 @@
 import { Test, TestingModule } from "@nestjs/testing";
 import { AppController } from "./app.controller.js";
 import { AppService } from "./app.service.js";
+import { describe, expect, it, beforeEach } from "vitest";
 
 describe("AppController", () => {
    let appController: AppController;
@@ -15,8 +16,10 @@ describe("AppController", () => {
    });
 
    describe("root", () => {
-      it('should return "Hello World!"', () => {
-         expect(appController.getHello("Hello Wworld!")).toBe("Hello World!");
+      it('should return "Hello World!"', async () => {
+         const result = await appController.getHello("HelloWorld");
+
+         expect(result).toBe("HELLOWORLD");
       });
    });
 });

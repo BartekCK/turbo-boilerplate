@@ -18,7 +18,9 @@
     "build:dev:watch": "turbo watch build:dev",
     "build:clean": "turbo run build:clean",
 
-    "test": "turbo run test",
+    "test": "turbo run test:unit test:integration",
+    "test:unit": "turbo run test:unit",
+    "test:integration": "turbo run test:integration",
     "update": "npm update"
   },
   "author": "",

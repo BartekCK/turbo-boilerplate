@@ -2,6 +2,7 @@ import { Test, TestingModule } from "@nestjs/testing";
 import { INestApplication } from "@nestjs/common";
 import request from "supertest";
 import { AppModule } from "../app.module.js";
+import { describe, it, beforeEach } from "vitest";
 
 describe("AppController (e2e)", () => {
    let app: INestApplication;
@@ -18,7 +19,8 @@ describe("AppController (e2e)", () => {
    it("/ (GET)", () => {
       return request(app.getHttpServer())
          .get("/")
+         .query({ text: "HelloWorld" })
          .expect(200)
-         .expect("Hello World!");
+         .expect("HELLOWORLD");
    });
 });
