@@ -37,10 +37,10 @@
       "env": ["*"]
     },
     "test:unit": {
-      "dependsOn": ["lint"]
+      "env": ["*"]
     },
     "test:integration": {
-      "dependsOn": ["lint"]
+      "env": ["*"]
     }
   }
 }

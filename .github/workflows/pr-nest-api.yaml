@@ -43,11 +43,6 @@ jobs:
       - name: Build dependencies
         run: npm run build:dev
 
-      - name: Build and start nest-api container
-        run: echo "Test env $EXPRESS_API_URL"
-        env:
-          EXPRESS_API_URL: http://localhost:3000
-
       - name: Run Integration Tests
         run: npm run test --filter=@apps/nest-api
         env:
