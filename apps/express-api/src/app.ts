@@ -34,6 +34,10 @@ class App {
          res.send({ value: uuid.generateV4() }).status(200);
       });
 
+      app.get("/health", (req: Request, res: Response) => {
+         res.send("OK").status(200);
+      });
+
       app.listen(port, () => {
          console.log(`🚀 Express server is running on port ${port}`);
       });
