@@ -15,6 +15,7 @@
     "lint": "turbo run lint",
 
     "build": "turbo run build",
+    "build:dev": "turbo run build:dev",
     "build:dev:watch": "turbo watch build:dev",
     "build:clean": "turbo run build:clean",
 

@@ -41,7 +41,7 @@ jobs:
         run: npm i
 
       - name: Build dependencies
-        run: turbo run build:dev
+        run: npm run build:dev
 
       - name: Run Integration Tests
         env:
