@@ -17,7 +17,7 @@
     "build:dev:watch": "tsc --build tsconfig.json -w",
 
     "lint": "eslint . --fix",
-    "test": "jest --runInBand --config jest.config.ts"
+    "test:unit": "vitest run --config vitest.unit.config.ts"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +31,6 @@
     "@packages/tsconfig": "*",
     "@packages/eslint-config-common": "*",
     "@packages/prettier-common": "*",
-    "@packages/test-common": "*"
+    "@packages/test-vitest": "*"
   }
 }

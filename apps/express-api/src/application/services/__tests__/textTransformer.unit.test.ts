@@ -1,5 +1,6 @@
 import { TextTransformer } from "../textTransformer.js";
 import { ITextTransformer } from "../textTransformer.interface.js";
+import { describe, expect, it, beforeAll } from "vitest";
 
 describe("textTransformer.toUppercase", () => {
    const textTransformer: ITextTransformer = new TextTransformer();

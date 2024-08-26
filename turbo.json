@@ -36,9 +36,11 @@
       "inputs": ["$TURBO_DEFAULT$", ".env"],
       "env": ["*"]
     },
-    "test": {
-      "dependsOn": ["lint"],
-      "cache": false
+    "test:unit": {
+      "env": ["*"]
+    },
+    "test:integration": {
+      "env": ["*"]
     }
   }
 }

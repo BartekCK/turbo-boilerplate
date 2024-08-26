@@ -1,0 +1,30 @@
+version: "3.9"
+
+
+services:
+  express-api:
+    build:
+      context: .
+      dockerfile: ./apps/express-api/docker/Dockerfile
+      args:
+        APP_NAME: express-api
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      APP_PORT: 3000
+
+  nest-api:
+    build:
+      context: .
+      dockerfile: ./apps/nest-api/docker/Dockerfile
+      args:
+        APP_NAME: nest-api
+    ports:
+      - "3001:3001"
+    depends_on:
+      - express-api
+    environment:
+      NODE_ENV: production
+      APP_PORT: 3001
+      EXPRESS_API_URL: http://express-api:3000

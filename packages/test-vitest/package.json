@@ -1,0 +1,35 @@
+{
+  "name": "@packages/test-vitest",
+  "type": "module",
+  "exports": {
+    ".": "./dist/vitest.config.js"
+  },
+  "types": "./dist/vitest.config.d.ts",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "prettier": "@packages/prettier-common",
+  "scripts": {
+    "cache:clean": "rimraf .turbo",
+    "install:clean": "rimraf node_modules",
+
+    "build": "tsc --build tsconfig.json",
+    "build:dev": "npm run build",
+    "build:clean": "rimraf dist",
+    "build:dev:watch": "tsc --build tsconfig.json -w",
+
+    "lint": "eslint . --fix"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0",
+    "vitest": "^2.0.5",
+    "@vitest/coverage-v8": "^2.0.5"
+  },
+  "devDependencies": {
+    "@packages/eslint-config-common": "*",
+    "@packages/prettier-common": "*",
+    "@packages/tsconfig": "*"
+  }
+}
