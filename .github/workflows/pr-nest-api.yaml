@@ -44,7 +44,7 @@ jobs:
         run: npm run build:dev
 
       - name: Run Integration Tests
-        run: npm run test --filter=@apps/nest-api
+        run: npm run test:integration -w @apps/nest-api
         env:
           EXPRESS_API_URL: http://localhost:3000
 
