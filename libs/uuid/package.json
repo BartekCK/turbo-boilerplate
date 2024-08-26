@@ -14,8 +14,7 @@
     "build:dev": "tsc --build tsconfig.json",
     "build:dev:watch": "tsc --build tsconfig.json -w",
     "build:clean": "rimraf dist",
-    "lint": "eslint . --fix",
-    "test": "jest --runInBand --config jest.config.ts"
+    "lint": "eslint . --fix"
   },
   "author": "",
   "license": "ISC",
@@ -25,7 +24,6 @@
   "devDependencies": {
     "@packages/tsconfig": "*",
     "@packages/eslint-config-common": "*",
-    "@packages/prettier-common": "*",
-    "@packages/test-common": "*"
+    "@packages/prettier-common": "*"
   }
 }

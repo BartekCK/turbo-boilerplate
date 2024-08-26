@@ -2,7 +2,7 @@
   "name": "turbo-boilerplate",
   "version": "1.0.0",
   "description": "",
-  "packageManager": "npm@10.8.1",
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "cache:clean": "turbo run cache:clean && rimraf .turbo",
     "install:clean": "turbo run install:clean && rimraf node_modules",
