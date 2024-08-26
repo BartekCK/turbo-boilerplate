@@ -46,7 +46,7 @@ jobs:
       - name: Run Integration Tests
         env:
           EXPRESS_API_URL: http://localhost:3000
-        run: npm run test --filter=@apps/nest-api
+        run: EXPRESS_API_URL=http://localhost:3000 npm run test --filter=@apps/nest-api
 
       - name: Shut down Docker Compose
         run: docker-compose down
