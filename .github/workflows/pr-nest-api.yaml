@@ -1,0 +1,46 @@
+name: Docker Compose Integration Test
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  integration-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 20.x ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Set up Docker Compose
+        run: sudo apt-get update && sudo apt-get install docker-compose
+
+      - name: Build and start express-api container
+        run: docker-compose up -d --no-deps --build express-api
+
+      - name: Wait for express-api to be ready
+        run: |
+          until curl -s http://localhost:3000/healthz; do
+            echo "Waiting for express-api to be ready..."
+            sleep 5
+          done
+
+      - name: Run Integration Tests
+        env:
+          EXPRESS_API_URL: http://localhost:3000
+        run: npm run test --filter=nest-api
+
+      - name: Shut down Docker Compose
+        run: docker-compose down
