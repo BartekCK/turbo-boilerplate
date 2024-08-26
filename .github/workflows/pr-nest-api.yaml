@@ -24,9 +24,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm i
-
       - name: Set up Docker Compose
         run: sudo apt-get update && sudo apt-get install docker-compose
 
@@ -35,15 +32,21 @@ jobs:
 
       - name: Wait for express-api to be ready
         run: |
-          until curl -s http://localhost:3000/healthz; do
+          until curl -s http://localhost:3000; do
             echo "Waiting for express-api to be ready..."
             sleep 5
           done
 
+      - name: Install dependencies
+        run: npm i
+
+      - name: Build dependencies
+        run: turbo run build:dev
+
       - name: Run Integration Tests
         env:
           EXPRESS_API_URL: http://localhost:3000
-        run: npm run test --filter=nest-api
+        run: npm run test --filter=@apps/nest-api
 
       - name: Shut down Docker Compose
         run: docker-compose down
