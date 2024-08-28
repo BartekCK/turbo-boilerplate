@@ -17,6 +17,7 @@ Currently, we have two applications in the repository:
 
 - `@apps/express-api`: This is an Express.js application. It also includes a shared folder, which can be imported and used in other parts of your project.
 - `@apps/nest-api`: This is a Nest.js application, which also uses shared data transfer objects (DTOs) from the Express API application.
+- `@apps/csr-react-vite`: This is a Create React App application with Vite. It is a client-side rendered (CSR) React application that uses Vite for faster development and better performance.
 
 ## Libs
 
@@ -35,9 +36,17 @@ The repository also includes a `libs` folder, which contains shared libraries th
 
 - **Pre-configured ESLint and Prettier:** ESLint and Prettier are already set up, ensuring consistent code style and automatic formatting across the project.
 
-- **Jest for Testing:** The boilerplate includes a testing setup using Jest, ready to write and run your tests.
+- **Vitest for Testing:** Vitest is used for testing the applications, providing a fast and efficient testing environment.
 
 - **Environment Variable Management:** dotenv is used for managing environment variables, ensuring easy configuration across different environments (development, staging, production).
+
+- **Shared Libraries:** The repository includes shared libraries that can be used across different parts of your project, promoting code reusability and maintainability.
+
+- **Ecmascript Modules:** The repository uses Ecmascript modules for better compatibility with modern JavaScript features.
+
+- **Docker Support:** The repository includes Dockerfiles for building and running the applications in containers.
+
+- **CI/CD:** The repository includes GitHub Actions workflows for continuous integration and deployment.
 
 ## Running the Applications
 
