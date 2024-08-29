@@ -4,7 +4,7 @@ ARG APP_NAME
 
 RUN apk update
 RUN apk add --no-cache libc6-compat
-RUN npm i -g turbo@2.0.x
+RUN npm i -g turbo@2.1.x
 
 WORKDIR /app
 
